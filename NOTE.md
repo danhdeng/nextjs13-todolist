@@ -14,3 +14,14 @@ PS E:\Code\nextjs\nextjs13-todolist> ./pocketbase.exe serve
 
 - REST API: http://127.0.0.1:8090/api/
 - Admin UI: http://127.0.0.1:8090/_/
+
+# update nextjs.config.js to support the new feature use app folder instead of pages folder for file system routing
+
+/\*_ @type {import('next').NextConfig} _/
+const nextConfig = {
+reactStrictMode: true,
+swcMinify: true,
+experimental: { appDir: true },
+};
+
+module.exports = nextConfig;
