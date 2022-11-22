@@ -25,3 +25,12 @@ experimental: { appDir: true },
 };
 
 module.exports = nextConfig;
+
+# update the package file to enable turbo mode
+
+"scripts": {
+"dev": "next dev --turbo",
+"build": "next build",
+"start": "next start",
+"lint": "next lint"
+},
