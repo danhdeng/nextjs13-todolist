@@ -34,3 +34,11 @@ module.exports = nextConfig;
 "start": "next start",
 "lint": "next lint"
 },
+
+# How to fix errors Cannot find module './Notes.module.css' or its corresponding type declarations.
+
+add typings.d.ts to the project directory
+
+add the following to the file
+
+declare module '\*.module.css';
