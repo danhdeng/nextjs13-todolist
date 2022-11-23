@@ -1,5 +1,5 @@
+import Link from 'next/link';
 import CreateNote from './createNote';
-import Note from './note';
 import styles from './Notes.module.css';
 async function getNotes() {
   const res = await fetch(
@@ -10,7 +10,7 @@ async function getNotes() {
   return data?.items as any[];
 }
 
-export default async function NotePage() {
+export default async function NotesPage() {
   const notes = await getNotes();
 
   return (
@@ -24,5 +24,19 @@ export default async function NotePage() {
 
       <CreateNote />
     </div>
+  );
+}
+
+function Note({ note }: any) {
+  const { id, title, content, created } = note || {};
+
+  return (
+    <Link href={`/notes/${id}`}>
+      <div className={styles.note}>
+        <h2>{title}</h2>
+        <h5>{content}</h5>
+        <p>{created}</p>
+      </div>
+    </Link>
   );
 }
